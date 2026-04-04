@@ -65,7 +65,6 @@ export default function HostPage() {
     setRoomId(room)
     setCreatedRoom(roomInput.trim())
 
-    // 🔥 CRITICAL FIX
     socket.emit('host:join', { room })
 
     window.history.replaceState(null, '', `/?host=${token}`)

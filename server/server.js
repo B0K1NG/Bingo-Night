@@ -17,12 +17,10 @@ let rooms = {}
 io.on('connection', (socket) => {
   console.log('User connected:', socket.id)
 
-  // 🔥 HOST JOIN ROOM (FIX)
   socket.on('host:join', ({ room }) => {
     socket.join(room)
   })
 
-  // PLAYER JOIN
   socket.on('player:join', ({ name, emoji, room }) => {
     if (!room) return
 
@@ -44,7 +42,6 @@ io.on('connection', (socket) => {
     io.to(room).emit('players:update', rooms[room].players)
   })
 
-  // BUZZ
   socket.on('player:buzz', ({ room }) => {
     const r = rooms[room]
     if (!r) return
@@ -60,7 +57,6 @@ io.on('connection', (socket) => {
     io.to(room).emit('buzz:update', r.buzzOrder)
   })
 
-  // RESET
   socket.on('buzz:reset', ({ room }) => {
     const r = rooms[room]
     if (!r) return
@@ -71,7 +67,6 @@ io.on('connection', (socket) => {
     io.to(room).emit('buzz:cleared')
   })
 
-  // REMOVE
   socket.on('buzz:remove', ({ room, playerId }) => {
     const r = rooms[room]
     if (!r) return
@@ -82,7 +77,6 @@ io.on('connection', (socket) => {
     io.to(playerId).emit('buzz:cleared')
   })
 
-  // REACTIONS
   socket.on('player:reaction', ({ emoji, room }) => {
     io.to(room).emit('reaction:new', {
       emoji,
@@ -90,7 +84,6 @@ io.on('connection', (socket) => {
     })
   })
 
-  // DISCONNECT
   socket.on('disconnect', () => {
     for (const room in rooms) {
       const r = rooms[room]

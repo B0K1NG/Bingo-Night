@@ -51,7 +51,6 @@ export default function PlayerPage() {
     const randomEmoji =
       emojis[Math.floor(Math.random() * emojis.length)];
 
-    // 🔥 JOIN WITH ROOM
     socket.emit('player:join', {
       name: name.trim(),
       emoji: randomEmoji,
