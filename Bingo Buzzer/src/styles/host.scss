@@ -30,18 +30,19 @@
       height: 44px;
       border-radius: 8px;
       border: none;
-      font-size: 14px;
+      font-size: 16px;
     }
 
     input {
       padding: 0 12px;
-      background: #222;
-      color: #fff;
+      border: 2px solid #FA2D1A;
+        color: #2E4C8C;
+        background: #FFF;
     }
 
     button {
-      background: #fff;
-      color: #000;
+      background: #FA2D1A;
+      color: #FFF3E1;
       cursor: pointer;
       font-weight: 600;
     }
@@ -75,8 +76,9 @@
       background: #1a1a1a;
       padding: 10px 14px;
       border-radius: 6px;
-      white-space: nowrap;
+      text-overflow: ellipsis;
       overflow: hidden;
+      white-space: nowrap;
       justify-content: space-between;
 
       button {
@@ -84,6 +86,7 @@
         height: 30px;
         border-radius: 6px;
         padding: 0;
+        background-color: transparent;
       }
     }
   }
