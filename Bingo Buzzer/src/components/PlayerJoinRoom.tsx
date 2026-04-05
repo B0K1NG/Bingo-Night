@@ -11,7 +11,7 @@ export default function PlayerJoinRoom({
 }: PlayerJoinRoomProps) {
   return (
     <div className="player__container">
-      <h1>Koandos informacija</h1>
+      <h1>Komandos informacija</h1>
       <input
         type="text"
         placeholder="Įveskite komandos pavadinimą"

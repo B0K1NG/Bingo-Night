@@ -99,12 +99,8 @@ export default function PlayerPage() {
             onClick={handleBuzz}
             disabled={hasBuzzed}
           >
-            {hasBuzzed ? 'BINGO!' : 'Spausk!'}
+            {hasBuzzed ? 'BINGO!' : 'BINGO!'}
           </button>
-
-          {hasBuzzed && (
-            <p className="player__status">Jūs paspaudėte</p>
-          )}
         </div>
 
         <div className="player__reactions">

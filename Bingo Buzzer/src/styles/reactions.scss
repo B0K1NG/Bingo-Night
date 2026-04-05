@@ -1,16 +1,18 @@
 .reaction-layer {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
 }
 
 .floating-emoji {
   position: absolute;
   bottom: 0;
   font-size: 30px;
-  animation: floatUp 2s ease-out forwards;
+  animation: floatUp 2s ease-in-out forwards;
 }
 
 @keyframes floatUp {
@@ -19,7 +21,7 @@
     opacity: 1;
   }
   100% {
-    transform: translateY(-200px);
+    transform: translateY(-40vh);
     opacity: 0;
   }
 }

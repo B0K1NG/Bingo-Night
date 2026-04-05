@@ -12,6 +12,7 @@ type Player = {
 type Reaction = {
   id: number
   emoji: string
+  left: number
 }
 
 export default function HostPage() {
@@ -39,7 +40,13 @@ export default function HostPage() {
     socket.on('buzz:update', setBuzzList)
 
     socket.on('reaction:new', (reaction: Reaction) => {
-      setReactions(prev => [...prev, reaction])
+      setReactions(prev => [
+        ...prev,
+        {
+          ...reaction,
+          left: 2 + Math.random() * 96,
+        },
+      ])
 
       setTimeout(() => {
         setReactions(prev => prev.filter(r => r.id !== reaction.id))

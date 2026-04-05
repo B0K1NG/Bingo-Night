@@ -9,6 +9,7 @@ type Player = {
 type Reaction = {
   id: number
   emoji: string
+  left: number
 }
 
 type HostLobbyProps = {
@@ -91,8 +92,7 @@ export default function HostLobby({
           <span
             key={r.id}
             className="floating-emoji"
-            style={{ left: `${Math.random() * 80}%` }}
-          >
+            style={{ left: `${r.left}vw` }}>
             {r.emoji}
           </span>
         ))}
