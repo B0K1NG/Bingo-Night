@@ -19,7 +19,6 @@ type HostLobbyProps = {
   players: Player[]
   buzzList: Player[]
   onReset: () => void
-  onRemoveBuzz: (id: string) => void
   reactions: Reaction[]
   gameStarted: boolean
   onStartGame: () => void
@@ -32,7 +31,6 @@ export default function HostLobby({
   players,
   buzzList,
   onReset,
-  onRemoveBuzz,
   reactions,
   gameStarted,
   onStartGame,

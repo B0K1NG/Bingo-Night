@@ -113,7 +113,6 @@ export default function HostPage() {
       players={players}
       buzzList={buzzList}
       onReset={handleResetBuzz}
-      onRemoveBuzz={handleRemoveBuzz}
       reactions={reactions}
       gameStarted={gameStarted}
       onStartGame={handleStartGame}
