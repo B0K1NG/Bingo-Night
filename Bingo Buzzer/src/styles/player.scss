@@ -38,10 +38,11 @@
   }
 
   &__reactions {
-    display: grid;
+    display: flex;
+    max-width: unset;
+    justify-content: center;
     gap: 10px;
     width: 100%;
-    max-width: 320px;
 
     button {
       width: 50px;
@@ -81,6 +82,8 @@
     &__reactions {
       width: 100%;
       gap: 8px;
+      display: grid;
+      max-width: 320px;
       grid-template-columns: repeat(3, 1fr);
 
       button {
