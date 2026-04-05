@@ -108,7 +108,7 @@ export default function PlayerPage() {
         </div>
 
         <div className="player__reactions">
-          {emojis.slice(0, 4).map((emoji) => (
+          {emojis.slice(0, 9).map((emoji) => (
             <button
               key={emoji}
               onClick={() => handleReaction(emoji)}
