@@ -42,7 +42,9 @@ export default function HostLobby({
 
   return (
     <div className='host__room'>
-      <h1>{roomName}</h1>
+      <div className='host__room-header'>
+        <h1>{roomName}</h1>
+      </div>
 
       {!gameStarted && (
         <>
@@ -56,7 +58,7 @@ export default function HostLobby({
 
           <div className="host__joined-players">
 
-            <h2>Žaidėjai</h2>
+            <h2>Komandos</h2>
               {players.map((p) => (
                 <div key={p.id}>
                   {p.emoji} {p.name}
@@ -66,18 +68,23 @@ export default function HostLobby({
         </>
       )}
 
-      <div className='host__leaderboard'>
-        <h2>Lyderių lentelė</h2>
-
-        <button onClick={onReset}>Išvalyti rezultatus </button>
-
-        {buzzList.map((p, i) => (
-          <div key={p.id}>
-            #{i + 1} — {p.emoji} {p.name}
-            <button onClick={() => onRemoveBuzz(p.id)}>❌</button>
+      {gameStarted && (
+        <>
+          <div className='host__leaderboard'>
+            <h2>Bingo lentelė</h2>
+            {buzzList.map((p, i) => (
+              <div key={p.id}>
+                #{i + 1} — {p.emoji} {p.name}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+          <div className='host__leaderboard-btn'>
+            <button onClick={onReset}>Išvalyti rezultatus </button>
+          </div>
+        </>
+      )}
+
+      
 
       <div className="reaction-layer">
         {reactions.map((r) => (

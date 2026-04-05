@@ -1,3 +1,26 @@
+#root:has(.host__room):has(.host__leaderboard) {
+  justify-content: unset;
+  align-items: unset;
+  display: unset;
+}
+
+.host__room:has(.host__leaderboard) {
+  align-items: flex-end;
+
+  .host__room-header {
+    background: #66033C;
+    width: 100%;
+    max-width: 100%;
+    height: 100px;
+    color: #CFEAFF;
+
+    & h1 {
+      padding: 24px 50px;
+    }
+  }
+}
+
+
 .host,
 .player {
   max-width: 1440px;
@@ -6,7 +29,7 @@
   &__inputs {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 18px;
     align-items: center;
   }
 
@@ -15,18 +38,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
 
     &-buttons {
       display: flex;
       flex-direction: row;
       gap: 14px;
+      padding-top: 40px;
     }
 
     input,
     button {
-      width: 100%;
-      max-width: 320px;
+      width: 240px;
       height: 44px;
       border-radius: 8px;
       border: none;
@@ -35,23 +58,43 @@
 
     input {
       padding: 0 12px;
-      border: 2px solid #FA2D1A;
-        color: #2E4C8C;
-        background: #FFF;
+      border: 2px solid #66033C;
+        color: #66033C;
+        background: #CFEAFF;
+
+        & value {
+          color: #66033C;
+        }
     }
 
     button {
-      background: #FA2D1A;
-      color: #FFF3E1;
+      background: #66033C;
+      color: #CFEAFF;
       cursor: pointer;
-      font-weight: 600;
+      font-weight: 400;
+    }
+  }
+
+  &__joined-players {
+    padding-top: 34px;
+  }
+
+  &__leaderboard {
+    align-self: flex-start;
+    padding-left: 50px;
+
+    h2 {
+      text-align: left !important;
+      font-weight: 400;
+    }
+
+    &-btn {
+      padding-right: 50px;
     }
   }
 
   &__leaderboard,
   &__joined-players {
-    width: 100%;
-    max-width: 500px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -59,6 +102,7 @@
     h2 {
       text-align: center;
       margin: 0;
+      margin-bottom: 20px;
     }
 
     > button {
@@ -68,18 +112,19 @@
     }
 
     > div {
-      width: 100%;
       display: flex;
       flex-direction: row;
-      align-items: center;
-      gap: 10px;
-      background: #1a1a1a;
+      align-self: center;
       padding: 10px 14px;
       border-radius: 6px;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
       justify-content: space-between;
+      background: transparent;
+      border: 1px solid #66033C;
+      width: 240px;
+      gap: 18px;
 
       button {
         width: 40px;
