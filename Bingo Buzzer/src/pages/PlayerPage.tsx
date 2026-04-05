@@ -86,25 +86,40 @@ export default function PlayerPage() {
   }
 
   return (
-    <div>
-      <h2>{joinedPlayer.emoji} {joinedPlayer.name}</h2>
+    <div className="player">
 
-      <button
-        onClick={handleBuzz}
-        disabled={hasBuzzed}
-      >
-        {hasBuzzed ? 'Buzzed!' : 'Buzz In'}
-      </button>
+      <div className="player__container">
 
-      {hasBuzzed && <p>You have buzzed in!</p>}
+        <h2 className="player__title">
+          {joinedPlayer.emoji} {joinedPlayer.name}
+        </h2>
 
-      <div>
-        {emojis.slice(0, 4).map((emoji) => (
-          <button key={emoji} onClick={() => handleReaction(emoji)}>
-            {emoji}
+        <div className="player__buzz">
+          <button
+            onClick={handleBuzz}
+            disabled={hasBuzzed}
+          >
+            {hasBuzzed ? 'BINGO!' : 'Spausk!'}
           </button>
-        ))}
+
+          {hasBuzzed && (
+            <p className="player__status">Jūs paspaudėte</p>
+          )}
+        </div>
+
+        <div className="player__reactions">
+          {emojis.slice(0, 4).map((emoji) => (
+            <button
+              key={emoji}
+              onClick={() => handleReaction(emoji)}
+            >
+              {emoji}
+            </button>
+          ))}
+        </div>
+
       </div>
+
     </div>
   )
 }
