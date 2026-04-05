@@ -87,10 +87,6 @@ export default function HostPage() {
     socket.emit('buzz:reset', { room: roomId })
   }
 
-  const handleRemoveBuzz = (id: string) => {
-    socket.emit('buzz:remove', { room: roomId, playerId: id })
-  }
-
   const handleStartGame = () => {
     setGameStarted(true)
   }
