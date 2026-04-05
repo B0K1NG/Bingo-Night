@@ -53,18 +53,18 @@ export default function HostLobby({
             <button onClick={onStartGame}>Pradėti muzikinį bingo</button>
             <button onClick={onDelete}>Ištrynti kambarį</button>
           </div>
+
+          <div className="host__joined-players">
+
+            <h2>Žaidėjai</h2>
+              {players.map((p) => (
+                <div key={p.id}>
+                  {p.emoji} {p.name}
+                </div>
+              ))}
+          </div>
         </>
       )}
-
-      <div className="host__joined-players">
-
-      <h2>Žaidėjai</h2>
-        {players.map((p) => (
-          <div key={p.id}>
-            {p.emoji} {p.name}
-          </div>
-        ))}
-      </div>
 
       <div className='host__leaderboard'>
         <h2>Lyderių lentelė</h2>
