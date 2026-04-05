@@ -12,7 +12,7 @@ export default function PlayerPage() {
   const params = new URLSearchParams(window.location.search);
   const room = params.get('room') || '';
 
-  const emojis = ['🔥','😂','💀','👏','😎','🚀'];
+  const emojis = ['🤣','🥳','😡','💋','💃','🕺🏼', '🔥', '🎉', '❤️', '🍾'];
 
   const [playerName, setPlayerName] = useState('');
   const [joinedPlayer, setJoinedPlayer] = useState<Player | null>(null);
