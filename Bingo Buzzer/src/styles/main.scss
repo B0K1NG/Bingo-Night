@@ -96,32 +96,6 @@ body {
     cursor: pointer;
     font-weight: 600;
   }
-
-  .reaction-layer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    pointer-events: none;
-  }
-
-  .floating-emoji {
-    position: absolute;
-    bottom: 0;
-    font-size: 30px;
-    animation: floatUp 2s ease-out forwards;
-  }
-
-  @keyframes floatUp {
-    0% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-200px);
-      opacity: 0;
-    }
-  }
 }
 
 .player {
@@ -162,5 +136,31 @@ body {
       font-size: 20px;
       border-radius: 10px;
     }
+  }
+}
+
+.reaction-layer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.floating-emoji {
+  position: absolute;
+  bottom: 0;
+  font-size: 30px;
+  animation: floatUp 2s ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px);
+    opacity: 0;
   }
 }
