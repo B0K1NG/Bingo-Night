@@ -10,16 +10,19 @@ export default function HostCreateRoom({
   onCreate,
 }: HostCreateRoomProps) {
   return (
-    <div className="host-container">
-      <h1>Create Room</h1>
-      <input 
-        type="text"
-        placeholder="Enter room name"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-       />
+    <div className="host__container">
+      <h1>Sukurti kambarį</h1>
+      
+      <div className="host__inputs">
+        <input 
+          type="text"
+          placeholder="Įveskite kambario pavadinimą"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+        />
 
-       <button onClick={onCreate}>Create Room</button>
+        <button onClick={onCreate}>Sukurti kambarį</button>
+       </div>
     </div>
   )
 }

@@ -10,16 +10,16 @@ export default function PlayerJoinRoom({
   onJoin,
 }: PlayerJoinRoomProps) {
   return (
-    <div className="player-container">
-      <h1>Join Room</h1>
+    <div className="player__container">
+      <h1>Koandos informacija</h1>
       <input
         type="text"
-        placeholder="Enter your team name"
+        placeholder="Įveskite komandos pavadinimą"
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />
 
-      <button onClick={() => onJoin(value)}>Join Room</button>
+      <button onClick={() => onJoin(value)}>Prisijungti prie kambario</button>
     </div>
   )
 }

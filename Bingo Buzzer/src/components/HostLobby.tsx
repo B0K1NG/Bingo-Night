@@ -41,37 +41,43 @@ export default function HostLobby({
   const joinUrl = `${baseUrl}/play?room=${roomId}`
 
   return (
-    <div>
+    <div className='host__room'>
       <h1>{roomName}</h1>
-
-      <button onClick={onDelete}>Delete Room</button>
 
       {!gameStarted && (
         <>
           <QRCodeCanvas value={joinUrl} size={200} />
           <p>{joinUrl}</p>
 
-          <button onClick={onStartGame}>Start Game</button>
+          <div className='host__room-buttons'>
+            <button onClick={onStartGame}>Pradėti muzikinį bingo</button>
+            <button onClick={onDelete}>Ištrynti kambarį</button>
+          </div>
         </>
       )}
 
-      <h2>Players</h2>
-      {players.map((p) => (
-        <div key={p.id}>
-          {p.emoji} {p.name}
-        </div>
-      ))}
+      <div className="host__joined-players">
 
-      <h2>Leaderboard</h2>
+      <h2>Žaidėjai</h2>
+        {players.map((p) => (
+          <div key={p.id}>
+            {p.emoji} {p.name}
+          </div>
+        ))}
+      </div>
 
-      <button onClick={onReset}>Reset Round</button>
+      <div className='host__leaderboard'>
+        <h2>Lyderių lentelė</h2>
 
-      {buzzList.map((p, i) => (
-        <div key={p.id}>
-          #{i + 1} — {p.emoji} {p.name}
-          <button onClick={() => onRemoveBuzz(p.id)}>❌</button>
-        </div>
-      ))}
+        <button onClick={onReset}>Išvalyti rezultatus </button>
+
+        {buzzList.map((p, i) => (
+          <div key={p.id}>
+            #{i + 1} — {p.emoji} {p.name}
+            <button onClick={() => onRemoveBuzz(p.id)}>❌</button>
+          </div>
+        ))}
+      </div>
 
       <div className="reaction-layer">
         {reactions.map((r) => (
