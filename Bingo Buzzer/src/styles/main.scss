@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -170,5 +174,58 @@ body {
   100% {
     transform: translateY(-200px);
     opacity: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .player {
+    &__container {
+      padding: 12px;
+      gap: 16px;
+    }
+
+    &__title {
+      font-size: 16px;
+      text-align: center;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      line-height: 1.3;
+    }
+
+    &__buzz {
+      width: 100%;
+
+      button {
+        width: 100%;
+        max-width: 100%;
+        height: 60px;
+        font-size: 18px;
+      }
+    }
+
+    &__reactions {
+      width: 100%;
+      gap: 8px;
+
+      button {
+        flex: 1;
+        height: 44px;
+        font-size: 18px;
+      }
+    }
+
+    &__status {
+      font-size: 13px;
+    }
+  }
+
+  .player__container {
+    input,
+    button {
+      width: 100%;
+      max-width: 100%;
+      height: 40px;
+      font-size: 13px;
+    }
   }
 }
